@@ -1,0 +1,34 @@
+{
+  "name": "AQUFLUX",
+  "sections": [
+    "SOLUTION",
+    "SCHEDULE"
+  ],
+  "items": [
+    {
+      "name": "AQUIFER_ID",
+      "value_type": "INT"
+    },
+    {
+      "name": "FLUX",
+      "value_type": "DOUBLE",
+      "dimension": "LiquidSurfaceVolume/Time*Length*Length"
+    },
+    {
+      "name": "SC_0",
+      "value_type": "DOUBLE",
+      "dimension": "Density",
+      "default": 0
+    },
+    {
+      "name": "TEMP",
+      "value_type": "DOUBLE",
+      "dimension": "Temperature"
+    },
+    {
+      "name": "PRESSURE",
+      "value_type": "DOUBLE",
+      "dimension": "Pressure"
+    }
+  ]
+}

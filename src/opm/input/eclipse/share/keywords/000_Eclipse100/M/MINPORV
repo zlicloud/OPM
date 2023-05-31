@@ -1,0 +1,16 @@
+{
+  "name": "MINPORV",
+  "sections": [
+    "GRID"
+  ],
+  "prohibits" : ["MINPV"],
+  "size": 1,
+  "items": [
+    {
+     "name": "VALUE",
+       "value_type": "DOUBLE",
+      "dimension": "ReservoirVolume",
+      "default": 1e-06
+    }
+  ]
+}
