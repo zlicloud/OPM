@@ -116,7 +116,7 @@ namespace Opm {
         const TableContainer& getRtempvdTables() const;
         const TableContainer& getRocktabTables() const;
         const TableContainer& getPlyadsTables() const;
-        const TableContainer& getPlyviscTables() const;
+        const TableContainer& fgetPlyviscTables() const;
         const TableContainer& getPlydhflfTables() const;
         const TableContainer& getPlymaxTables() const;
         const TableContainer& getPlyrockTables() const;
@@ -167,6 +167,7 @@ namespace Opm {
         const DiffCoeffWatTable& getDiffusionCoefficientWaterTable() const;
         const DiffCoeffGasTable& getDiffusionCoefficientGasTable() const;
         const PlyvmhTable& getPlyvmhTable() const;
+        const PlyvjmTable& getPlyvjmTable() const;
         const RockTable& getRockTable() const;
         const ViscrefTable& getViscrefTable() const;
         const PlmixparTable& getPlmixparTable() const;
@@ -225,6 +226,7 @@ namespace Opm {
             serializer(m_diffCoeffWatTable);
             serializer(m_diffCoeffGasTable);
             serializer(m_plyvmhTable);
+            serializer(m_plyvjmTable);
             serializer(m_rockTable);
             serializer(m_plmixparTable);
             serializer(m_shrateTable);
@@ -370,6 +372,7 @@ namespace Opm {
         DiffCoeffWatTable m_diffCoeffWatTable;
         DiffCoeffGasTable m_diffCoeffGasTable;
         PlyvmhTable m_plyvmhTable;
+        PlyvjmTable m_plyvjmTable;
         RockTable m_rockTable;
         PlmixparTable m_plmixparTable;
         ShrateTable m_shrateTable;

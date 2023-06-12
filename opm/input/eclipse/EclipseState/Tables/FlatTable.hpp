@@ -403,6 +403,40 @@ struct PlyvmhTable : public FlatTable<PlyvmhRecord> {
     }
 };
 
+struct PlyvjmRecord {
+    static constexpr std::size_t size = 4;
+
+    double k_mh;
+    double a_mh;
+    double csep_ref;
+    double temp_ref;
+
+    bool operator==(const PlyvjmRecord& data) const {
+        return k_mh == data.k_mh &&
+               a_mh == data.a_mh &&
+               cse_ref == data.cse_ref &&
+               temp_ref == data.temp_ref;
+    }
+
+    template<class Serializer>
+    void serializeOp(Serializer& serializer)
+    {
+        serializer(k_mh);
+        serializer(a_mh);
+        serializer(csep_ref);
+        serializer(temp_ref);
+    }
+};
+
+struct PlyvjmTable : public FlatTable<PlyvjmRecord> {
+    using FlatTable< PlyvmhRecord >::FlatTable;
+
+    static PlyvjmTable serializationTestObject()
+    {
+        return PlyvjmTable({{1.0, 2.0, 1.0, 298.15}});
+    }
+};
+
 struct ShrateRecord {
     static constexpr std::size_t size = 1;
 
