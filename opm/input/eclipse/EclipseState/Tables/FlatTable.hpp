@@ -414,7 +414,7 @@ struct PlyvjmRecord {
     bool operator==(const PlyvjmRecord& data) const {
         return k_mh == data.k_mh &&
                a_mh == data.a_mh &&
-               cse_ref == data.cse_ref &&
+               csep_ref == data.csep_ref &&
                temp_ref == data.temp_ref;
     }
 
@@ -429,7 +429,7 @@ struct PlyvjmRecord {
 };
 
 struct PlyvjmTable : public FlatTable<PlyvjmRecord> {
-    using FlatTable< PlyvmhRecord >::FlatTable;
+    using FlatTable< PlyvjmRecord >::FlatTable;
 
     static PlyvjmTable serializationTestObject()
     {
