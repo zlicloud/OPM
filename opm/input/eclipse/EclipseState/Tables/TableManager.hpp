@@ -116,7 +116,7 @@ namespace Opm {
         const TableContainer& getRtempvdTables() const;
         const TableContainer& getRocktabTables() const;
         const TableContainer& getPlyadsTables() const;
-        const TableContainer& fgetPlyviscTables() const;
+        const TableContainer& getPlyviscTables() const;
         const TableContainer& getPlydhflfTables() const;
         const TableContainer& getPlymaxTables() const;
         const TableContainer& getPlyrockTables() const;
