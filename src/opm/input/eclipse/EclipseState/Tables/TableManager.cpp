@@ -264,6 +264,10 @@ std::optional<JFunc> make_jfunc(const Deck& deck) {
         if (deck.hasKeyword<ParserKeywords::PLYVMH>()) {
             this->m_plyvmhTable = PlyvmhTable(deck["PLYVMH"].back());
         }
+        
+        if (deck.hasKeyword<ParserKeywords::PLYVJM>()) {
+            this->m_plyvjmTable = PlyvjmTable(deck["PLYVJM"].back());
+        }
 
         using GC = ParserKeywords::GCOMPIDX;
         if (deck.hasKeyword<GC>())
@@ -288,6 +292,7 @@ std::optional<JFunc> make_jfunc(const Deck& deck) {
         result.m_diffCoeffWatTable = DiffCoeffWatTable::serializationTestObject();
         result.m_diffCoeffGasTable = DiffCoeffGasTable::serializationTestObject();
         result.m_plyvmhTable = PlyvmhTable::serializationTestObject();
+        result.m_plyvjmTable = PlyvjmTable::serializationTestObject();
         result.m_rockTable = RockTable::serializationTestObject();
         result.m_plmixparTable = PlmixparTable::serializationTestObject();
         result.m_shrateTable = ShrateTable::serializationTestObject();
@@ -1184,6 +1189,10 @@ std::optional<JFunc> make_jfunc(const Deck& deck) {
         return m_plyvmhTable;
     }
 
+    const PlyvjmTable& TableManager::getPlyvjmTable() const {
+        return m_plyvjmTable;
+    }
+    
     const std::map<int, PlymwinjTable>& TableManager::getPlymwinjTables() const {
         return m_plymwinjTables;
     }
@@ -1261,6 +1270,7 @@ std::optional<JFunc> make_jfunc(const Deck& deck) {
                m_diffCoeffGasTable == data.m_diffCoeffGasTable &&
                m_plmixparTable == data.m_plmixparTable &&
                m_plyvmhTable == data.m_plyvmhTable &&
+               m_plyvjmTable == data.m_plyvjmTable &&
                m_shrateTable == data.m_shrateTable &&
                m_stone1exTable == data.m_stone1exTable &&
                m_viscrefTable == data.m_viscrefTable &&
